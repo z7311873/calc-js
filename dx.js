@@ -1,3 +1,16 @@
+var cookies = document.cookie;
+var userDataCookie = cookies.split(";").find(function(cookie) {
+  return cookie.trim().startsWith("userfenz=");
+});
+
+if (userDataCookie) {
+  var userDataValue = userDataCookie.split("=")[1];
+  document.getElementById("fen").innerText = userDataValue;
+}
+
+
+
+
 let jgb=document.getElementById("jg");
 jgb.innerHTML="";
 
@@ -31,6 +44,10 @@ function suan(){
     alert("NO top")
     document.getElementById("ya").disabled=true
   }
+
+  document.cookie = "userfenz=" + fenz + "; expires=Thu, 18 Dec 2024 12:00:00 UTC; path=/";
+
+
 }
 
 
