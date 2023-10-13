@@ -1,0 +1,16 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <pre id="ip"></pre>
+</body>
+<script>
+fetch("http://httpbin.org/get")
+.then(response => response.json())
+.then(data => {
+    var pre = document.getElementById("ip");
+    pre.textContent = JSON.stringify(data, null, 4);
+})
+</script>
+</html>
