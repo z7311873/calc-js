@@ -6,11 +6,13 @@
     <pre id="ip"></pre>
 </body>
 <script>
-fetch("http://httpbin.org/get")
-.then(response => response.json())
-.then(data => {
-    var pre = document.getElementById("ip");
-    pre.textContent = JSON.stringify(data, null, 4);
-})
+fetch("https://api.ipify.org/?format=json")
+  .then(response => response.json())
+  .then(data => {
+    let ipAddress = data.ip;
+    let div = document.getElementById("ip");
+    div.innerHTML = 'IP:'+ipAddress;
+  })
+
 </script>
 </html>
