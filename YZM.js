@@ -1,4 +1,5 @@
 function huan(){
+document.getElementById("wai").innerHTML="<canvas id='tu' onclick='huan()'></canvas>"
 code = '';
 var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     
@@ -17,8 +18,8 @@ tuz.font='50px Arial'
 tuz.fillText(code,50,50)
 var image = new Image();
 image.src = tu.toDataURL()
-console.log(image.src)
-document.body.appendChild(image);
+document.getElementById("xia").innerHTML=""
+document.getElementById("xia").appendChild(image)
 
 }
 huan()
@@ -29,7 +30,6 @@ function yz(){
     }
     else{
         alert("you are error!")
-        document.getElementById("wai").innerHTML="<canvas id='tu'></canvas>"
         huan()
     }
 }
